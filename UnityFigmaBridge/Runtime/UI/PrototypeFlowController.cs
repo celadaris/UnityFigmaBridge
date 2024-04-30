@@ -278,9 +278,7 @@ namespace UnityFigmaBridge.Runtime.UI
         /// <param name="fromEditor"></param>
         public void SetCurrentScreen(GameObject screen,string nodeId, bool fromEditor)
         {
-            // If in editor (non runtime) mode, destroy immediately 
-            if (fromEditor) DestroyImmediate(CurrentScreenInstance);
-            else Destroy(CurrentScreenInstance);
+            
             
             // Make sure we clear any active selection in any event system
             if (!fromEditor) EventSystem.current.SetSelectedGameObject(null);
